@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: product-service-config
+data:
+  DB_NAME: "products"
+  DB_HOST: "192.168.10.110"
+  DB_PORT: "5432"
