@@ -6,7 +6,8 @@ namespace: development
 
 resources:
   - ../../base
+  - namespaces.yaml
 
-patchesStrategicMerge:
-  - patch-replicas.yaml
-  - patch-configmap.yaml
+patches:
+  - path: patch-replicas.yaml
+  - path: patch-configmap.yaml
