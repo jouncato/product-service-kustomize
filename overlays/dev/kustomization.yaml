@@ -6,7 +6,7 @@ namespace: development
 
 resources:
   - ../../base
-  - namespaces.yaml
+  - namespace.yaml
 
 patches:
   - path: patch-replicas.yaml
