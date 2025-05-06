@@ -22,6 +22,7 @@ spec:
       containers:
       - name: product-service
         image: jouncato/product-service-argo-cd:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 3000
         env:
@@ -75,4 +76,3 @@ spec:
           periodSeconds: 10
           timeoutSeconds: 5
           failureThreshold: 3
-      imagePullPolicy: Always
