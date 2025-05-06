@@ -4,8 +4,8 @@ metadata:
   name: product-service
 spec:
   ports:
-    - name: http-development           
+    - name: http-prod          
       port: 3000          
       targetPort: 3000     
-      nodePort: 31000      
+      nodePort: 56300      
   type: NodePort

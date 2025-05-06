@@ -1,9 +1,9 @@
+# overlays/prod/patch-resources.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: product-service
 spec:
-  replicas: 9
   selector:
     matchLabels:
       app: product-service
@@ -14,13 +14,10 @@ spec:
     spec:
       containers:
       - name: product-service
-        image: jouncato/product-service-argo-cd:latest
-        ports:
-        - containerPort: 3000
         resources:
           requests:
-            memory: "128Mi"
+            memory: "256Mi"
             cpu: "250m"
           limits:
-            memory: "256Mi"
-            cpu: "500m"
+            memory: "512Mi"
+            cpu: "1000m"

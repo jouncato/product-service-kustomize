@@ -2,10 +2,18 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 namePrefix: prod-
-namespace: production
+namespace: kustomize-production
 
 resources:
   - ../../base
+  - namespace.yaml
 
-patchesStrategicMerge:
-  - patch-replicas.yaml
+patches:
+  - path: patch-replicas.yaml
+  - path: patch-configmap.yaml
+  - path: patch-service.yaml
+
+images:
+  - name: jouncato/product-service-argo-cd:latest
+    newName: jouncato/product-service-argocd
+    newTag: v1.2.3  
