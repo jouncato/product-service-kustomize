@@ -4,5 +4,5 @@ metadata:
   name: product-service-config
 data:
   DB_NAME: "products"
-  DB_HOST: "postgresql-prd.default.svc.cluster.local"
+  DB_HOST: "aws.postgresql-prd.default.svc.cluster.local"
   DB_PORT: "5432"
