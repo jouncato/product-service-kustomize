@@ -9,6 +9,7 @@ spec:
     repoURL: https://github.com/jouncato/product-service-kustomize.git
     targetRevision: HEAD
     path: overlays/qa
+  destination:
     server: https://kubernetes.default.svc
     namespace: default
   syncPolicy:
