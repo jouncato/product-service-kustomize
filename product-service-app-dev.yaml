@@ -4,17 +4,23 @@ metadata:
   name: product-service-dev
   namespace: argocd
 spec:
-  project: kustomize-product-service-dev
+  project: default
   source:
     repoURL: https://github.com/jouncato/product-service-kustomize.git
     targetRevision: HEAD
     path: overlays/dev
   destination:
     server: https://kubernetes.default.svc
-    namespace: prd
+    namespace: default
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
     syncOptions:
     - CreateNamespace=true
+    retry:
+      limit: 5
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 3m
