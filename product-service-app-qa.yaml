@@ -1,15 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: product-service-dev
+  name: product-service-qa
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/jouncato/product-service-kustomize.git
     targetRevision: HEAD
-    path: overlays/dev
-  destination:
+    path: overlays/qa
     server: https://kubernetes.default.svc
     namespace: default
   syncPolicy:
